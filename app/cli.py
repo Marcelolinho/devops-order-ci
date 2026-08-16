@@ -12,7 +12,12 @@ def construir_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Calcula total de pedido da Aula 03.")
     parser.add_argument("--preco", type=Decimal, required=True, help="Preco unitario")
     parser.add_argument("--quantidade", type=int, required=True, help="Quantidade")
-    parser.add_argument("--desconto", type=Decimal, default=Decimal("0"), help="Desconto percentual")
+    parser.add_argument(
+        "--desconto",
+        type=Decimal,
+        default=Decimal("0"),
+        help="Desconto percentual"
+    )
     parser.add_argument("--cupom", default=None, help="Cupom promocional")
     parser.add_argument("--expressa", action="store_true", help="Usa entrega expressa")
     return parser
